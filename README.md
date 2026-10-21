@@ -1,6 +1,13 @@
 # IS7024 Project
 
 ## Introduction
+Cincy Food Safety Watch is a web application designed to help Cincinnati residents access restaurant food safety information in one place. The application combines public restaurant inspection records with Cincinnati 311 service request data to help users explore food safety concerns across different neighborhoods.
+
+### Planned Features
+- Search for restaurant inspection records.
+- View available food safety violations.
+- Explore food-related complaints.
+- Identify possible patterns in food safety complaints and restaurant inspections.
 
 
 ## Icon
