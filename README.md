@@ -38,6 +38,7 @@ field 3
 * Lila Isett
 * Comfort Okayi
 * Liam Treutel
+* Zarah Zafra
 
 
 Group #1 meets over Teams as needed.
