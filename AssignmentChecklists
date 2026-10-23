@@ -1,0 +1,47 @@
+# IS7024: Assignment Checklists
+
+For keeping track of what needs to be done each week.
+
+
+
+
+
+
+## [2026-10-25] GitHub Repository & Design Document [(link)](https://uc.instructure.com/courses/1885414/modules/items/80499553)
+
+- [x] Form group with 3-5 members
+- [x] GitHub repository created
+- [ ] Document is concise &c.
+- [ ] Use proper Markdown syntax
+- [ ] Introduction is present and describes proposed service
+- [ ] Requirements are present, in correct format
+- [ ] Each requirement has multiple Given/When/Then examples
+- [ ] G/W/T examples are specific enough to unit test
+- [ ] Two data sources are listed 
+- [ ] Standup meetings are listed (format + time)
+
+
+## [2026-11-14] Feature Branch Due [(link)](https://uc.instructure.com/courses/1885414/assignments/24210082?module_item_id=80499571)
+
+(Individual)
+
+## [2026-11-21] Create a Feature for your Project and Code Review a Teammate's Changes [(link)](https://uc.instructure.com/courses/1885414/assignments/24210080)
+
+
+
+## [2026-12-01] Group Project/Final Project [(link)](https://uc.instructure.com/courses/1885414/assignments/24210086?module_item_id=80499603)
+
+- [ ] Code is in good form, tabbed appropriately
+- [ ] Did something beyond minimum requirements
+- [ ] Project is on GH.com, all team members have committed
+- [ ] Implemented another group's code review recommendations
+- [ ] Publicly hosted in Azure
+- [ ] Consume at least public JSON services, and one from a fellow student's group
+- [ ] Show results of JSON data in a human readable, HTML+CSS format
+- [ ] Produce data via REST/JSON along with OpenAPI or JSON Schema file
+- [ ] Gather data from the user via form or other means
+- [ ] Accessibility and CSS
+      - Site looks good
+      - HTML conforms to XHTML 1.0 Strict
+      - Images are accessible (alt text, &c.) 
+      - Colors are accessible and non-clashing
