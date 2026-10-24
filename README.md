@@ -331,6 +331,7 @@ The following storyboard illustrates the application's proposed main pages and u
 - [View Editable Storyboard (PowerPoint)](docs/Cincy_Food_Safety_Storyboard.pptx)
 
 **Note:** The storyboard illustrates the initial interface design. Additional details, including inspection selection and the presentation of associated violations, will be refined during development.
+
 ---
 
 ## Database
