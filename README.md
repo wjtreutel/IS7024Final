@@ -301,6 +301,172 @@ As a Cincinnati resident, I want to compare restaurant inspection information an
 
 - As a potential future enhancement, users may be provided with an optional date-range filter to view and compare restaurant inspection records and food-related 311 requests within a specified reporting period.
 
+## Proposed Optional Enhancement – Inspection Awareness & Community Pulse
+
+**Status:** Proposed optional enhancement for group review. Not part of the initial required scope.
+
+### Overview
+
+This proposal introduces two complementary features to improve the usefulness of Cincy Food Safety Watch:
+
+1. **Inspection Awareness:** Help residents understand publicly available restaurant inspection information through explanations and links to official Cincinnati Health Department guidance.
+2. **Community Food Safety Pulse:** Allow users to contribute structured feedback on food safety concerns, dining decisions, and information needs, with aggregated responses made available to other users.
+
+The objective is to go beyond displaying public records by providing educational context and introducing user-generated information that may support more informed decisions.
+
+### 1. Inspection Awareness
+
+**Proposed User Story**
+
+As a Cincinnati resident, I want to understand the inspection types and procedures associated with restaurant inspection records so that I can better interpret the information when making dining decisions.
+
+**Proposed Functionality**
+
+- Display inspection types and dates alongside the restaurant's inspection history.
+- Provide brief explanations of inspection types where reliable official definitions are available.
+- Include links to official Cincinnati Health Department guidance covering inspection procedures, requirements, and food safety information.
+- Present inspection records as published, without independently determining whether a restaurant is safe or compliant.
+
+The feature would primarily use existing inspection data and official city guidance, without requiring the application to independently interpret food safety regulations.
+
+**Proposed Location:** Restaurant Details page.
+
+### 2. Community Food Safety Pulse
+
+**Proposed User Story**
+
+As a Cincinnati resident, I want to share my food safety priorities and view aggregated responses from other participating users so that I can better understand community concerns and factors influencing dining decisions.
+
+**Proposed Functionality**
+
+Introduce simple, voluntary polls with predefined response options. Users can submit their responses and view aggregated results from other participants.
+
+**Proposed Poll Interaction**
+
+- Display one poll question at a time, allowing users to navigate between the three predefined questions.
+- Participation will be voluntary, and users will not be required to answer all questions.
+- Each poll can be submitted independently, without requiring users to complete the other questions.
+- After submitting, users may view aggregated community results or proceed to another question.
+- Basic controls will be considered to reduce duplicate submissions.
+
+This approach aims to keep the interface simple and user-friendly while minimizing implementation complexity.
+
+**Potential Poll Questions**
+
+**Poll A – Food Safety Priorities**
+
+*Which food safety concerns matter to you when choosing a restaurant?*
+
+Select all that apply:
+
+- Restaurant cleanliness
+- Food handling practices
+- Pest prevention
+- Food storage conditions
+- Allergen safety
+
+**Poll B – Dining Decisions**
+
+*Which of the following inspection-related findings or information gaps would make you reconsider dining at a restaurant?*
+
+Select up to two:
+
+- Serious food handling violations
+- Repeated violations across inspections
+- Pest-related violations
+- Unresolved violations
+- Unavailable or outdated inspection information
+
+**Poll C – Inspection Awareness**
+
+*What would you most like to understand about restaurant inspections?*
+
+Select one:
+
+- Inspection planning and frequency
+- Inspection types
+- Violation severity
+- Follow-up procedures
+- How food-related complaints are investigated
+
+Poll C may also help identify which official educational resources would be most useful to residents. Relevant information could be sourced from or linked to Cincinnati Health Department guidance.
+
+#### Community Results
+
+If implemented, poll responses would be stored in the application's database and aggregated across all submissions.
+
+Results would be accessible through the Community Pulse component and could include:
+
+- Number of submissions received for each question.
+- Number and percentage of submissions selecting each answer.
+- Most frequently selected food safety concerns and information needs.
+
+For questions allowing multiple selections, percentages would represent the proportion of submissions selecting each option and would not necessarily total 100%.
+
+Aggregated responses may also help identify topics residents want to learn more about, supporting future improvements to the application's educational content.
+
+**Important:** Poll results would reflect voluntary submissions from participating users. They would not represent verified food safety findings, official city assessments, or a statistically representative survey of Cincinnati residents.
+
+### 3. Proposed User Interface
+
+The enhancements could be incorporated into existing application pages.
+
+**Restaurant Details Page**
+
+- Add an Inspection Awareness section providing inspection-type explanations and links to official city guidance.
+- Add an optional Community Pulse component focused on inspection information needs.
+- Allow users to submit responses and view aggregated community results.
+
+**Neighborhood Insights Page**
+
+- Add an optional Community Pulse component alongside existing neighborhood summaries.
+- Allow users to submit responses and view aggregated community results.
+- Keep official inspection and 311 information clearly distinguishable from user-generated responses.
+
+The existing restaurant inspection, violation, and neighborhood comparison functionality would remain unchanged.
+
+### 4. Implementation Considerations
+
+If approved, the enhancements could be implemented using the existing application architecture with minimal additional components.
+
+**Inspection Awareness**
+- Use existing inspection records and official Cincinnati Health Department guidance.
+- Provide brief explanations or links without requiring additional database tables.
+
+**Community Food Safety Pulse**
+- Start with three predefined poll questions and response options maintained within the application.
+- Use a simple `PollResponse` table to store submitted answers. Multiple selections from the same submission would share a `SubmissionID` to support accurate aggregation.
+- Validate responses and implement basic safeguards against duplicate or automated submissions.
+- Display aggregated response counts and percentages through the Community Pulse component.
+- Clearly distinguish user-generated feedback from official inspection and 311 records.
+
+The proposed implementation would not require user registration, free-text submissions, or advanced analytics.
+
+**Implementation Priority:** Inspection Awareness could be introduced first, followed by Community Pulse if approved by the group and development capacity permits. Both features remain optional and would not affect the initial project requirements.
+
+**Proposed Minimum Viable Feature (MVP)**
+
+The initial Community Pulse feature would include:
+
+- Three predefined questions displayed one at a time.
+- Voluntary participation with independent submission of each poll.
+- Single or multiple selections depending on the question.
+- A Submit Response function to save answers.
+- A View Community Results function displaying aggregated counts and percentages.
+
+The MVP would exclude user registration, free-text responses, neighborhood-specific poll analysis, and advanced reporting.
+
+
+### 5. Proposed Storyboard
+
+The updated mockups illustrate how Inspection Awareness and Community Pulse could be incorporated into the existing Restaurant Details and Neighborhood Insights pages.
+
+- [View Optional Enhancement Storyboard (PDF)](docs/Cincy_Food_Safety_Storyboard_Optional_Enhancements.pdf)
+- [View Editable Optional Enhancement Storyboard (PowerPoint)](docs/Cincy_Food_Safety_Storyboard_Optional_Enhancements.pptx)
+
+**Note:** These enhancements are proposals for team discussion and are not part of the agreed initial implementation scope. Development would depend on group approval, project priorities, and available capacity.
+
+
 ---
 
 ## Icon / Logo
