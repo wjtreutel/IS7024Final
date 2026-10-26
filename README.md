@@ -1,7 +1,7 @@
 # Cincy Food Safety Watch
 
-**IS 7024 – Integration with Cloud Systems**  
-**Group 1 – Project Design Document**
+**IS 7024 â€“ Integration with Cloud Systems**  
+**Group 1 â€“ Project Design Document**
 
 ---
 
@@ -50,7 +50,7 @@ We will search the dataset for food-related service requests. Users will be able
 
 ## Functional Requirements
 
-### Requirement 100.0 – Search Restaurant Inspection Records
+### Requirement 100.0 â€“ Search Restaurant Inspection Records
 
 #### User Story
 
@@ -72,37 +72,37 @@ As a Cincinnati resident, I want to search for restaurant inspection records so 
 
 #### Examples
 
-**Example 1 – Restaurant Found (Happy Path)**
+**Example 1 â€“ Restaurant Found (Happy Path)**
 
 - **Given** the dataset contains a restaurant named "Sample Bistro" with license reference `TEST-L001`,
 - **When** I enter "Sample Bistro" in the restaurant search field and click Search,
 - **Then** I should see "Sample Bistro" once in the search results, with an option to view its inspection history.
 
-**Example 2 – No Matching Restaurant (Edge Case)**
+**Example 2 â€“ No Matching Restaurant (Edge Case)**
 
 - **Given** the dataset contains no restaurant matching "Nonexistent Test Restaurant",
 - **When** I enter "Nonexistent Test Restaurant" and click Search,
 - **Then** I should see the message "No matching restaurants found," with no restaurant records displayed.
 
-**Example 3 – Restaurant With Multiple Inspections (Happy Path)**
+**Example 3 â€“ Restaurant With Multiple Inspections (Happy Path)**
 
 - **Given** "Sample Bistro" has three inspection records dated January 15, March 10, and June 20, 2026, all associated with license `TEST-L001`,
 - **When** I search for "Sample Bistro" and select the restaurant from the results,
 - **Then** I should see one restaurant details page listing all three inspections, ordered from most recent to oldest.
 
-**Example 4 – Blank Search Field (Happy Path)**
+**Example 4 â€“ Blank Search Field (Happy Path)**
 
 - **Given** the database contains 35 distinct restaurants,
 - **When** I leave the restaurant search field blank and click Search,
 - **Then** I should see all 35 restaurants across four pages, with 10 restaurants displayed on each of the first three pages and the remaining 5 on the fourth page.
 
-**Example 5 – Partial and Case-Insensitive Search (Happy Path)**
+**Example 5 â€“ Partial and Case-Insensitive Search (Happy Path)**
 
 - **Given** the dataset contains a restaurant named "Sample Bistro",
 - **When** I enter "sample bis" in the restaurant search field and click Search,
 - **Then** I should see "Sample Bistro" in the search results, regardless of capitalization.
 
-**Example 6 – API Unavailable (Edge Case)**
+**Example 6 â€“ API Unavailable (Edge Case)**
 
 - **Given** the Cincinnati Food Safety Program API returns an HTTP 503 Service Unavailable response and no cached restaurant records are available,
 - **When** I search for "Sample Bistro",
@@ -110,7 +110,7 @@ As a Cincinnati resident, I want to search for restaurant inspection records so 
 
 ---
 
-### Requirement 200.0 – View Food Safety Violations
+### Requirement 200.0 â€“ View Food Safety Violations
 
 #### User Story
 
@@ -132,37 +132,37 @@ As a user, I want to view recorded food safety violations so that I can understa
 
 #### Examples
 
-**Example 1 – Inspection With Violations (Happy Path)**
+**Example 1 â€“ Inspection With Violations (Happy Path)**
 
 - **Given** "Sample Bistro" has an inspection dated June 20, 2026, with three recorded violations,
 - **When** I select that inspection from the restaurant details page,
 - **Then** I should see the inspection date and all three violations, including their available violation codes and descriptions.
 
-**Example 2 – No Violation Details Available (Edge Case)**
+**Example 2 â€“ No Violation Details Available (Edge Case)**
 
 - **Given** "Sample Bistro" has an inspection dated March 10, 2026, with no violation details available in the dataset,
 - **When** I select that inspection,
 - **Then** I should see the inspection information and a message stating "No violation details available for this inspection."
 
-**Example 3 – Multiple Violations Under One Inspection (Happy Path)**
+**Example 3 â€“ Multiple Violations Under One Inspection (Happy Path)**
 
 - **Given** inspection `TEST-I001` has three distinct violation records associated with the same inspection identifier,
 - **When** I view the inspection history for "Sample Bistro",
 - **Then** I should see inspection `TEST-I001` listed only once, with all three violations accessible under that inspection.
 
-**Example 4 – View Violations From a Previous Inspection (Happy Path)**
+**Example 4 â€“ View Violations From a Previous Inspection (Happy Path)**
 
 - **Given** "Sample Bistro" has two inspections, one dated January 15, 2026, with two violations and another dated June 20, 2026, with three violations,
 - **When** I select the January 15 inspection,
 - **Then** I should see only the two violations associated with that inspection, without displaying violations from the June 20 inspection.
 
-**Example 5 – Missing Violation Description (Edge Case)**
+**Example 5 â€“ Missing Violation Description (Edge Case)**
 
 - **Given** inspection `TEST-I001` has a violation record with code `TEST-V001` but no description,
 - **When** I view the violation details,
 - **Then** I should see the violation code and a message stating "Description not available," without omitting the violation record.
 
-**Example 6 – Inspection Record Not Found (Edge Case)**
+**Example 6 â€“ Inspection Record Not Found (Edge Case)**
 
 - **Given** inspection identifier `TEST-I999` does not exist in the available inspection records,
 - **When** I attempt to open its inspection details page,
@@ -170,7 +170,7 @@ As a user, I want to view recorded food safety violations so that I can understa
 
 ---
 
-### Requirement 300.0 – Explore Food-Related 311 Requests
+### Requirement 300.0 â€“ Explore Food-Related 311 Requests
 
 #### User Story
 
@@ -192,37 +192,37 @@ As a Cincinnati resident, I want to view food-related 311 service requests in my
 
 #### Examples
 
-**Example 1 – Food-Related Requests Found (Happy Path)**
+**Example 1 â€“ Food-Related Requests Found (Happy Path)**
 
 - **Given** the dataset contains five food-related 311 requests associated with the Over-the-Rhine neighborhood,
 - **When** I select "Over-the-Rhine" on the 311 service requests page,
 - **Then** I should see all five requests, including their available request types, submission dates, and statuses.
 
-**Example 2 – No Food-Related Requests (Edge Case)**
+**Example 2 â€“ No Food-Related Requests (Edge Case)**
 
 - **Given** the dataset contains no food-related 311 requests associated with the selected neighborhood,
 - **When** I select that neighborhood on the 311 service requests page,
 - **Then** I should see the message "No matching food-related requests found," with no request records displayed.
 
-**Example 3 – Exclude Unrelated Service Requests (Happy Path)**
+**Example 3 â€“ Exclude Unrelated Service Requests (Happy Path)**
 
 - **Given** the Over-the-Rhine neighborhood has eight 311 requests, including three categorized as food-related and five categorized as unrelated issues such as potholes or street maintenance,
 - **When** I select "Over-the-Rhine" on the food-related 311 requests page,
 - **Then** I should see only the three food-related requests, excluding the five unrelated requests.
 
-**Example 4 – Missing Neighborhood Information (Edge Case)**
+**Example 4 â€“ Missing Neighborhood Information (Edge Case)**
 
 - **Given** a food-related 311 request has no neighborhood information in the dataset,
 - **When** I select a specific neighborhood to view its food-related requests,
 - **Then** the request with missing neighborhood information should not appear in that neighborhood's results.
 
-**Example 5 – View Request Status (Happy Path)**
+**Example 5 â€“ View Request Status (Happy Path)**
 
 - **Given** a food-related 311 request with reference `TEST-SR001` has a status of "Closed",
 - **When** I view the request details,
 - **Then** I should see its request reference, type, submission date, and "Closed" status, without the application presenting the status as confirmation of a food safety violation.
 
-**Example 6 – API Unavailable (Edge Case)**
+**Example 6 â€“ API Unavailable (Edge Case)**
 
 - **Given** the Cincinnati 311 Service Requests API is temporarily unavailable and no cached request records are available,
 - **When** I select a neighborhood to view food-related requests,
@@ -230,7 +230,7 @@ As a Cincinnati resident, I want to view food-related 311 service requests in my
 
 ---
 
-### Requirement 400.0 – Compare Food Safety Information by Neighborhood
+### Requirement 400.0 â€“ Compare Food Safety Information by Neighborhood
 
 #### User Story
 
@@ -255,49 +255,49 @@ As a Cincinnati resident, I want to compare restaurant inspection information an
 
 #### Examples
 
-**Example 1 – Both Data Sources Have Records (Happy Path)**
+**Example 1 â€“ Both Data Sources Have Records (Happy Path)**
 
 - **Given** the Over-the-Rhine neighborhood has four distinct restaurant inspections and seven food-related 311 requests in the available datasets,
 - **When** I select "Over-the-Rhine" on the Neighborhood Insights page,
 - **Then** I should see a neighborhood summary displaying four restaurant inspections and seven food-related 311 requests, with each total clearly identified by its data source.
 
-**Example 2 – One Data Source Has No Records (Edge Case)**
+**Example 2 â€“ One Data Source Has No Records (Edge Case)**
 
 - **Given** the selected neighborhood has five restaurant inspections but no matching food-related 311 requests,
 - **When** I select that neighborhood on the Neighborhood Insights page,
 - **Then** I should see five restaurant inspections and zero food-related 311 requests, with a message indicating that no matching 311 records were found.
 
-**Example 3 – Prevent Duplicate Inspection Counts (Happy Path)**
+**Example 3 â€“ Prevent Duplicate Inspection Counts (Happy Path)**
 
 - **Given** the Food Safety dataset contains 12 violation-level records associated with four distinct restaurant inspections in Over-the-Rhine,
 - **When** I view the neighborhood's restaurant inspection summary,
 - **Then** I should see a total of four inspections rather than 12, ensuring that inspections with multiple violations are not counted more than once.
 
-**Example 4 – Compare Two Neighborhoods (Happy Path)**
+**Example 4 â€“ Compare Two Neighborhoods (Happy Path)**
 
 - **Given** Over-the-Rhine has four restaurant inspections and seven food-related 311 requests, while Downtown has six inspections and three food-related 311 requests,
 - **When** I compare "Over-the-Rhine" and "Downtown" on the Neighborhood Insights page,
 - **Then** I should see the inspection and 311 request totals for both neighborhoods displayed side by side, with their respective sources clearly labeled.
 
-**Example 5 – Display Historical Data Coverage (Happy Path)**
+**Example 5 â€“ Display Historical Data Coverage (Happy Path)**
 
 - **Given** the available inspection records for Over-the-Rhine span January 2018 to October 2026, while food-related 311 requests span March 2020 to October 2026,
 - **When** I view the Over-the-Rhine neighborhood summary,
 - **Then** I should see the total number of distinct inspections and food-related 311 requests, along with the earliest and latest record dates for each dataset.
 
-**Example 6 – Missing Neighborhood Information (Edge Case)**
+**Example 6 â€“ Missing Neighborhood Information (Edge Case)**
 
 - **Given** the Food Safety dataset contains an inspection record without neighborhood information,
 - **When** I view the summary for "Over-the-Rhine",
 - **Then** the record should not be included in the Over-the-Rhine inspection total unless its neighborhood has been reliably identified.
 
-**Example 7 – One Data Source Unavailable (Edge Case)**
+**Example 7 â€“ One Data Source Unavailable (Edge Case)**
 
 - **Given** the Food Safety Program API is available but the Cincinnati 311 API is temporarily unavailable, with no cached 311 records available,
 - **When** I view the neighborhood summary,
 - **Then** I should see the available restaurant inspection information and a message indicating that 311 data is temporarily unavailable, rather than displaying a misleading zero request count.
 
-**Optional Enhancement – Date-Range Filtering**
+**Optional Enhancement â€“ Date-Range Filtering**
 
 - As a potential future enhancement, users may be provided with an optional date-range filter to view and compare restaurant inspection records and food-related 311 requests within a specified reporting period.
 
@@ -391,11 +391,11 @@ We will use statuses such as **To Do**, **In Progress**, and **Done** to track o
 
 | Team Member | Role |
 | --- | --- |
-| Liam Treutel | To be decided by the group |
-| Lila Isett | To be decided by the group |
-| Comfort Okayi | To be decided by the group |
-| Zarah May Zafra | To be decided by the group |
-| Sean Dippold | To be decided by the group |
+| Liam Treutel | Database Architect |
+| Lila Isett | Software Engineer |
+| Comfort Okayi | Scrum Master |
+| Zarah May Zafra | Feature Engineer |
+| Sean Dippold | Front-End Engineer |
 
 
 All five group members will contribute to the application. We will discuss and agree on our project roles and responsibilities.
@@ -406,11 +406,11 @@ All five group members will contribute to the application. We will discuss and a
 
 **Meeting Platform:** Microsoft Teams
 
-**Meeting Day:** To be confirmed by the group.
+**Meeting Day:** Sunday
 
-**Meeting Time:** To be confirmed by the group.
+**Meeting Time:** 8pm
 
-We currently communicate through our Microsoft Teams group chat. We will agree on a regular weekly meeting time to discuss project progress, review completed work, and plan our next tasks.
+We currently communicate through our Microsoft Teams group chat. We regularly meet to discuss project progress, review completed work, and plan our next tasks.
 
 ---
 
